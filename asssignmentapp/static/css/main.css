@@ -1,0 +1,31 @@
+html,body{
+    height: 100%;
+}
+body{
+    overflow:hidden;
+    background:repeating-conic-gradient(#fff 0 10deg, #add1de 10deg 20deg);
+    background-repeat:no-repeat
+}
+.main{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+}
+button{
+    padding:5px 10px;
+    font-size:20px;
+    border: 3px solid #4CAF50 ;
+    border-radius : 10px;
+}
+button:hover{
+    background:#4CAF50;
+    cursor: pointer;
+}
+.count-text{
+    font-size:20px;
+    font-weight:bold;
+    color:#dc1212;
+}
