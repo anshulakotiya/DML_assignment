@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="main">
+<div class="main">{%csrf_token %}
     <div align="center">
         <button id="like-btn">Like Button</button>&nbsp;&nbsp;&nbsp;
         <button id="dislike-btn">Dislike Button</button>
@@ -16,21 +17,11 @@
         <p class="count-text" id="like-count"></p>
         <p class="count-text" id="dislike-count"></p>
     </div>
+    <div align="center">
+        <p class="count-text">No of total like = <span id="total-like-count">{{like}}</span></p>
+        <p class="count-text">No of total dislike = <span id="total-dislike-count">{{dislike}}</span></p>
+    </div>
 </div>
-<script type="text/javascript">
-    var likeCount =0,dislikeCount=0;
-    likeButton = document.getElementById('like-btn');
-    dislikeButton = document.getElementById('dislike-btn');
-    likeButton.onclick = function(){
-        likeCount++;
-        document.getElementById('like-count').innerHTML = "No of times like button pressed = "+likeCount;
-    }
-    dislikeButton.onclick = function(){
-        dislikeCount++;
-        document.getElementById('dislike-count').innerHTML = "No of times dislike button pressed = "+dislikeCount;
-    }
-    document.getElementById('like-count').innerHTML = "No of times like button pressed = "+likeCount;
-    document.getElementById('dislike-count').innerHTML = "No of times dislike button pressed = "+dislikeCount;
-</script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

@@ -20,4 +20,5 @@ from . import views
 
 urlpatterns = [
     path('', views.home),
+    path('change_counting/', views.change_counting),
 ]
